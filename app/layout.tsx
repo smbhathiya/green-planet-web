@@ -46,7 +46,7 @@ export default function RootLayout({
       className={cn("antialiased", poppins.variable, inter.variable)}
     >
       <body>
-        <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
+        <ThemeProvider defaultTheme="light" forcedTheme="light">{children}</ThemeProvider>
       </body>
     </html>
   )

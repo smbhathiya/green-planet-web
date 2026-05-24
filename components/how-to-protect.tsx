@@ -9,7 +9,9 @@ const steps = [
     title: "Plant Trees",
     description:
       "Every tree planted absorbs CO₂, provides oxygen, and creates habitat for wildlife. Even one tree makes a difference.",
-    color: "#22C55E",
+    color: "#16a34a",
+    bg: "#f0fdf4",
+    border: "#bbf7d0",
   },
   {
     number: "02",
@@ -17,7 +19,9 @@ const steps = [
     title: "Reduce Plastic",
     description:
       "Choose reusable bags, bottles, and containers. Refuse single-use plastic wherever possible to protect our oceans.",
-    color: "#38BDF8",
+    color: "#0891b2",
+    bg: "#ecfeff",
+    border: "#a5f3fc",
   },
   {
     number: "03",
@@ -25,7 +29,9 @@ const steps = [
     title: "Save Water",
     description:
       "Fix leaks, take shorter showers, and harvest rainwater. Every drop saved helps sustain life in water-scarce regions.",
-    color: "#22d3ee",
+    color: "#0284c7",
+    bg: "#f0f9ff",
+    border: "#bae6fd",
   },
   {
     number: "04",
@@ -33,7 +39,9 @@ const steps = [
     title: "Recycle Materials",
     description:
       "Sort and recycle paper, glass, metals, and electronics. Recycling cuts emissions, reduces landfills, and conserves resources.",
-    color: "#a78bfa",
+    color: "#7c3aed",
+    bg: "#f5f3ff",
+    border: "#ddd6fe",
   },
   {
     number: "05",
@@ -41,7 +49,9 @@ const steps = [
     title: "Renewable Energy",
     description:
       "Switch to solar, wind, or hydroelectric energy. Clean energy is now affordable and is the fastest path to a low-carbon future.",
-    color: "#fbbf24",
+    color: "#d97706",
+    bg: "#fffbeb",
+    border: "#fde68a",
   },
   {
     number: "06",
@@ -49,7 +59,9 @@ const steps = [
     title: "Protect Wildlife",
     description:
       "Support conservation organizations, avoid products made from endangered species, and protect natural habitats near you.",
-    color: "#f472b6",
+    color: "#e11d48",
+    bg: "#fff1f2",
+    border: "#fecdd3",
   },
 ]
 
@@ -58,7 +70,7 @@ export function HowToProtect() {
     <section
       id="protect"
       className="py-24 md:py-36"
-      style={{ background: "linear-gradient(180deg, #0a1628 0%, #020617 100%)" }}
+      style={{ background: "#f0fdf4" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -66,21 +78,21 @@ export function HowToProtect() {
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
             style={{
-              background: "rgba(34,197,94,0.1)",
-              border: "1px solid rgba(34,197,94,0.25)",
-              color: "#86efac",
+              background: "#dcfce7",
+              border: "1px solid #bbf7d0",
+              color: "#14532D",
             }}
           >
             Take Action
           </span>
           <h2
-            className="text-4xl md:text-5xl font-black text-white mb-4"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="text-4xl md:text-5xl font-black mb-4"
+            style={{ fontFamily: "var(--font-heading)", color: "#111827" }}
           >
             How To{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #22C55E, #86efac)",
+                background: "linear-gradient(135deg, #14532D, #22C55E)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -89,7 +101,7 @@ export function HowToProtect() {
               Protect Nature
             </span>
           </h2>
-          <p className="max-w-xl mx-auto text-white/50 text-lg leading-relaxed">
+          <p className="max-w-xl mx-auto text-lg leading-relaxed" style={{ color: "#6b7280" }}>
             You don&apos;t need to be a scientist or a politician to change the world. These six actions, done consistently, create real impact.
           </p>
         </div>
@@ -103,22 +115,24 @@ export function HowToProtect() {
                 key={step.number}
                 className="group relative rounded-2xl p-7 card-hover"
                 style={{
-                  background: "rgba(15,23,42,0.65)",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  backdropFilter: "blur(12px)",
+                  background: "#ffffff",
+                  border: `1px solid ${step.border}`,
+                  boxShadow: "0 2px 12px rgba(20,83,45,0.06)",
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget
-                  el.style.borderColor = `${step.color}30`
+                  el.style.background = step.bg
+                  el.style.boxShadow = `0 12px 40px ${step.color}18`
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget
-                  el.style.borderColor = "rgba(255,255,255,0.06)"
+                  el.style.background = "#ffffff"
+                  el.style.boxShadow = "0 2px 12px rgba(20,83,45,0.06)"
                 }}
               >
                 {/* Step number background */}
                 <div
-                  className="absolute top-5 right-5 text-6xl font-black opacity-5 select-none pointer-events-none transition-opacity duration-300 group-hover:opacity-10"
+                  className="absolute top-5 right-5 text-6xl font-black opacity-[0.06] select-none pointer-events-none transition-opacity duration-300 group-hover:opacity-[0.1]"
                   style={{
                     fontFamily: "var(--font-heading)",
                     color: step.color,
@@ -133,27 +147,29 @@ export function HowToProtect() {
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                     style={{
-                      background: `${step.color}15`,
-                      border: `1px solid ${step.color}30`,
+                      background: `${step.color}12`,
+                      border: `1px solid ${step.border}`,
                     }}
                   >
                     <Icon style={{ width: 22, height: 22, color: step.color }} />
                   </div>
                   <span
                     className="text-xs font-bold uppercase tracking-widest"
-                    style={{ color: `${step.color}80` }}
+                    style={{ color: `${step.color}99` }}
                   >
                     Step {step.number}
                   </span>
                 </div>
 
                 <h3
-                  className="text-xl font-bold text-white mb-3"
-                  style={{ fontFamily: "var(--font-heading)" }}
+                  className="text-xl font-bold mb-3"
+                  style={{ fontFamily: "var(--font-heading)", color: "#111827" }}
                 >
                   {step.title}
                 </h3>
-                <p className="text-sm text-white/45 leading-relaxed">{step.description}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                  {step.description}
+                </p>
               </div>
             )
           })}

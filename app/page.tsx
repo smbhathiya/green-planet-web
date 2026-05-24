@@ -13,7 +13,7 @@ import { Footer } from "@/components/footer"
 
 export default function Page() {
   return (
-    <div className="min-h-screen" style={{ background: "#020617", color: "#f8fafc" }}>
+    <div className="min-h-screen" style={{ background: "#f8fafc", color: "#111827" }}>
       <Navbar />
       <main>
         <Hero />

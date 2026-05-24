@@ -8,35 +8,40 @@ const reasons = [
     title: "Clean Air",
     description:
       "Forests and plants produce the oxygen we breathe every second of every day. Without them, life ceases to exist.",
-    color: "#38BDF8",
+    color: "#22C55E",
+    bg: "#f0fdf4",
   },
   {
     icon: Droplets,
     title: "Clean Water",
     description:
       "Natural ecosystems filter and purify water. Healthy watersheds sustain billions of people and countless species.",
-    color: "#22C55E",
+    color: "#16a34a",
+    bg: "#dcfce7",
   },
   {
     icon: Leaf,
     title: "Biodiversity",
     description:
       "Millions of species form the web of life. Every extinction weakens the entire ecosystem we all depend on.",
-    color: "#86efac",
+    color: "#15803d",
+    bg: "#f0fdf4",
   },
   {
     icon: Thermometer,
     title: "Climate Balance",
     description:
       "Forests and oceans absorb CO₂ and regulate global temperatures, keeping our climate stable and habitable.",
-    color: "#fbbf24",
+    color: "#d97706",
+    bg: "#fffbeb",
   },
   {
     icon: HeartHandshake,
     title: "Human Survival",
     description:
       "Medicines, food, materials, and mental wellbeing all trace back to healthy, thriving natural environments.",
-    color: "#f472b6",
+    color: "#e11d48",
+    bg: "#fff1f2",
   },
 ]
 
@@ -45,7 +50,7 @@ export function WhyNature() {
     <section
       id="why-nature"
       className="py-24 md:py-36"
-      style={{ background: "linear-gradient(180deg, #020617 0%, #0a1628 100%)" }}
+      style={{ background: "#ffffff" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -53,21 +58,21 @@ export function WhyNature() {
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
             style={{
-              background: "rgba(34,197,94,0.1)",
-              border: "1px solid rgba(34,197,94,0.25)",
-              color: "#86efac",
+              background: "#dcfce7",
+              border: "1px solid #bbf7d0",
+              color: "#14532D",
             }}
           >
             The Foundation of Life
           </span>
           <h2
-            className="text-4xl md:text-5xl font-black text-white mb-4"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="text-4xl md:text-5xl font-black mb-4"
+            style={{ fontFamily: "var(--font-heading)", color: "#111827" }}
           >
             Why{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #22C55E, #86efac)",
+                background: "linear-gradient(135deg, #14532D, #22C55E)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -76,7 +81,7 @@ export function WhyNature() {
               Nature Matters
             </span>
           </h2>
-          <p className="max-w-xl mx-auto text-white/50 text-lg leading-relaxed">
+          <p className="max-w-xl mx-auto text-lg leading-relaxed" style={{ color: "#6b7280" }}>
             Every breath, every drop of water, every meal connects us to nature. Here&apos;s why protecting it is protecting ourselves.
           </p>
         </div>
@@ -88,21 +93,23 @@ export function WhyNature() {
             return (
               <div
                 key={reason.title}
-                className="group relative rounded-2xl p-6 card-hover"
+                className="group relative rounded-2xl p-6 card-hover cursor-default"
                 style={{
-                  background: "rgba(15,23,42,0.7)",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  backdropFilter: "blur(12px)",
+                  background: "#ffffff",
+                  border: `1px solid ${reason.color}22`,
+                  boxShadow: "0 2px 12px rgba(20,83,45,0.06)",
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget
-                  el.style.borderColor = `${reason.color}30`
-                  el.style.background = `rgba(15,23,42,0.9)`
+                  el.style.background = reason.bg
+                  el.style.borderColor = `${reason.color}55`
+                  el.style.boxShadow = `0 8px 32px ${reason.color}20`
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget
-                  el.style.borderColor = "rgba(255,255,255,0.06)"
-                  el.style.background = "rgba(15,23,42,0.7)"
+                  el.style.background = "#ffffff"
+                  el.style.borderColor = `${reason.color}22`
+                  el.style.boxShadow = "0 2px 12px rgba(20,83,45,0.06)"
                 }}
               >
                 {/* Icon */}
@@ -117,12 +124,14 @@ export function WhyNature() {
                 </div>
 
                 <h3
-                  className="text-lg font-bold text-white mb-2"
-                  style={{ fontFamily: "var(--font-heading)" }}
+                  className="text-lg font-bold mb-2"
+                  style={{ fontFamily: "var(--font-heading)", color: "#111827" }}
                 >
                   {reason.title}
                 </h3>
-                <p className="text-sm text-white/45 leading-relaxed">{reason.description}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                  {reason.description}
+                </p>
 
                 {/* Bottom accent */}
                 <div
