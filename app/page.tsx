@@ -1,19 +1,33 @@
-import { Button } from "@/components/ui/button"
+import { Navbar } from "@/components/navbar"
+import { Hero } from "@/components/hero"
+import { WhyNature } from "@/components/why-nature"
+import { EnvProblems } from "@/components/env-problems"
+import { Statistics } from "@/components/statistics"
+import { HowToProtect } from "@/components/how-to-protect"
+import { WildlifeShowcase } from "@/components/wildlife-showcase"
+import { DailyHabits } from "@/components/daily-habits"
+import { VideoSection } from "@/components/video-section"
+import { Quotes } from "@/components/quotes"
+import { CTASection } from "@/components/cta-section"
+import { Footer } from "@/components/footer"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
+    <div className="min-h-screen" style={{ background: "#020617", color: "#f8fafc" }}>
+      <Navbar />
+      <main>
+        <Hero />
+        <WhyNature />
+        <EnvProblems />
+        <Statistics />
+        <HowToProtect />
+        <WildlifeShowcase />
+        <DailyHabits />
+        <VideoSection />
+        <Quotes />
+        <CTASection />
+      </main>
+      <Footer />
     </div>
   )
 }
