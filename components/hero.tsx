@@ -2,41 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { ChevronDown, Leaf } from "lucide-react"
-
-const LEAVES = [
-  { left: "4%",  delay: "0s",   dur: "14s",  size: 16, opacity: 0.5 },
-  { left: "12%", delay: "2.5s", dur: "11s",  size: 10, opacity: 0.4 },
-  { left: "20%", delay: "5s",   dur: "16s",  size: 20, opacity: 0.6 },
-  { left: "30%", delay: "1s",   dur: "12s",  size: 13, opacity: 0.35 },
-  { left: "42%", delay: "4s",   dur: "18s",  size: 18, opacity: 0.5 },
-  { left: "52%", delay: "0.5s", dur: "10s",  size: 11, opacity: 0.4 },
-  { left: "63%", delay: "3.5s", dur: "15s",  size: 22, opacity: 0.55 },
-  { left: "72%", delay: "6s",   dur: "13s",  size: 14, opacity: 0.4 },
-  { left: "81%", delay: "2s",   dur: "17s",  size: 9,  opacity: 0.3 },
-  { left: "90%", delay: "4.5s", dur: "11s",  size: 17, opacity: 0.5 },
-  { left: "96%", delay: "1.5s", dur: "14s",  size: 12, opacity: 0.35 },
-  { left: "8%",  delay: "7s",   dur: "19s",  size: 8,  opacity: 0.3 },
-]
-
-function LeafParticle({
-  left, delay, dur, size, opacity,
-}: { left: string; delay: string; dur: string; size: number; opacity: number }) {
-  return (
-    <div
-      className="absolute bottom-0 pointer-events-none"
-      style={{
-        left,
-        animation: `leaf-float ${dur} ${delay} linear infinite`,
-        opacity,
-      }}
-    >
-      <Leaf
-        style={{ width: size, height: size, color: "#bbf7d0" }}
-        fill="currentColor"
-      />
-    </div>
-  )
-}
+import { FloatingLeaves } from "@/components/floating-leaves"
 
 export function Hero() {
   const [mounted, setMounted] = useState(false)
@@ -51,48 +17,27 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       style={{
-        background:
-          "radial-gradient(ellipse at 25% 55%, rgba(34,197,94,0.25) 0%, transparent 55%), radial-gradient(ellipse at 75% 25%, rgba(20,83,45,0.3) 0%, transparent 55%), linear-gradient(160deg, #14532D 0%, #166534 35%, #15803d 65%, #22C55E 100%)",
+        backgroundImage: "url('/hero.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Light mesh overlay */}
+      {/* Dark gradient overlay for text readability */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-30"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            "radial-gradient(circle at 60% 40%, rgba(255,255,255,0.15) 0%, transparent 60%)",
-        }}
-      />
-
-      {/* Animated glow orbs */}
-      <div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl pointer-events-none animate-float-y"
-        style={{ background: "radial-gradient(circle, #bbf7d0 0%, transparent 70%)" }}
-      />
-      <div
-        className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full opacity-15 blur-3xl pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, #d9f99d 0%, transparent 70%)",
-          animation: "float-y 4.5s ease-in-out infinite reverse",
-        }}
-      />
-
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+          background:
+            "linear-gradient(160deg, rgba(7,26,13,0.72) 0%, rgba(10,30,16,0.55) 50%, rgba(7,26,13,0.65) 100%)",
         }}
       />
 
       {/* Floating leaves */}
-      <div className="absolute inset-0 overflow-hidden">
-        {LEAVES.map((leaf, i) => (
-          <LeafParticle key={i} {...leaf} />
-        ))}
-      </div>
+      <FloatingLeaves
+        count={14}
+        direction="up"
+        colors={["#bbf7d0", "#d9f99d", "#86efac", "#ffffff"]}
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 text-center">

@@ -1,6 +1,7 @@
 "use client"
 
 import { Leaf, ArrowRight } from "lucide-react"
+import { FloatingLeaves } from "@/components/floating-leaves"
 
 export function CTASection() {
   return (
@@ -33,6 +34,12 @@ export function CTASection() {
           background: "radial-gradient(circle, #d9f99d 0%, transparent 70%)",
           animation: "float-y 4s ease-in-out infinite reverse",
         }}
+      />
+
+      <FloatingLeaves
+        count={14}
+        direction="down"
+        colors={["#bbf7d0", "#d9f99d", "#86efac", "#ffffff"]}
       />
 
       {/* Leaf decorations */}

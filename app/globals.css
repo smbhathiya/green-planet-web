@@ -134,25 +134,24 @@
 
 /* ─── Green Planet Animations ─── */
 
+/* Bottom → top (hero, light sections) */
 @keyframes leaf-float {
-  0% {
-    transform: translateY(100vh) rotate(0deg) translateX(0px);
-    opacity: 0;
-  }
-  8% {
-    opacity: 0.7;
-  }
-  50% {
-    transform: translateY(40vh) rotate(200deg) translateX(40px);
-    opacity: 0.6;
-  }
-  92% {
-    opacity: 0.4;
-  }
-  100% {
-    transform: translateY(-10vh) rotate(360deg) translateX(-20px);
-    opacity: 0;
-  }
+  0%   { transform: translateY(110vh) translateX(0px)   rotate(0deg)   scale(0.9); opacity: 0; }
+  7%   { opacity: 0.75; }
+  25%  { transform: translateY(75vh)  translateX(-28px) rotate(90deg)  scale(1.0); }
+  50%  { transform: translateY(45vh)  translateX(32px)  rotate(205deg) scale(1.08); }
+  75%  { transform: translateY(18vh)  translateX(-18px) rotate(305deg) scale(0.93); opacity: 0.55; }
+  100% { transform: translateY(-8vh)  translateX(12px)  rotate(400deg) scale(0.85); opacity: 0; }
+}
+
+/* Top → bottom (falling leaves) */
+@keyframes leaf-fall {
+  0%   { transform: translateY(-60px)  translateX(0px)   rotate(0deg)   scale(0.9); opacity: 0; }
+  7%   { opacity: 0.8; }
+  25%  { transform: translateY(22vh)   translateX(32px)  rotate(100deg) scale(1.0); }
+  50%  { transform: translateY(50vh)   translateX(-22px) rotate(215deg) scale(1.08); }
+  75%  { transform: translateY(76vh)   translateX(28px)  rotate(318deg) scale(0.93); opacity: 0.55; }
+  100% { transform: translateY(110vh)  translateX(-8px)  rotate(415deg) scale(0.85); opacity: 0; }
 }
 
 @keyframes fade-in-up {

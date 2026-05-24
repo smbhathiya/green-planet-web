@@ -1,6 +1,7 @@
 "use client"
 
 import { Wind, Droplets, Leaf, Thermometer, HeartHandshake } from "lucide-react"
+import { FloatingLeaves } from "@/components/floating-leaves"
 
 const reasons = [
   {
@@ -49,10 +50,16 @@ export function WhyNature() {
   return (
     <section
       id="why-nature"
-      className="py-24 md:py-36"
+      className="relative py-24 md:py-36 overflow-hidden"
       style={{ background: "#ffffff" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FloatingLeaves
+        count={10}
+        direction="down"
+        colors={["#22C55E", "#86efac", "#16a34a", "#d9f99d"]}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <span

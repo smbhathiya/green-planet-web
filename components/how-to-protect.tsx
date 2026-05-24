@@ -1,6 +1,7 @@
 "use client"
 
 import { Sprout, PackageOpen, Droplets, Recycle, Sun, Shield } from "lucide-react"
+import { FloatingLeaves } from "@/components/floating-leaves"
 
 const steps = [
   {
@@ -69,10 +70,16 @@ export function HowToProtect() {
   return (
     <section
       id="protect"
-      className="py-24 md:py-36"
+      className="relative py-24 md:py-36 overflow-hidden"
       style={{ background: "#f0fdf4" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FloatingLeaves
+        count={10}
+        direction="up"
+        colors={["#22C55E", "#15803d", "#86efac", "#d9f99d"]}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <span
