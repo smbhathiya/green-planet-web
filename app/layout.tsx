@@ -32,6 +32,27 @@ export const metadata: Metadata = {
     "save forests",
     "clean environment",
   ],
+  openGraph: {
+    title: "Green Planet - Protect Nature Before It's Too Late",
+    description:
+      "Green Planet is an environmental awareness platform dedicated to protecting nature, wildlife, forests, oceans, and inspiring eco-friendly lifestyles for a sustainable future.",
+    images: [
+      {
+        url: "/cvr.png",
+        width: 1200,
+        height: 630,
+        alt: "Green Planet Preview",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Green Planet - Protect Nature Before It's Too Late",
+    description:
+      "Green Planet is an environmental awareness platform dedicated to protecting nature, wildlife, forests, oceans, and inspiring eco-friendly lifestyles for a sustainable future.",
+    images: ["/cvr.png"],
+  },
 }
 
 export default function RootLayout({
