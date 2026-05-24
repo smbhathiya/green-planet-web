@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Quote } from "lucide-react"
 import { FloatingLeaves } from "@/components/floating-leaves"
 
@@ -35,8 +36,23 @@ export function Quotes() {
     <section
       id="quotes"
       className="relative py-24 md:py-36 overflow-hidden"
-      style={{ background: "#f0fdf4" }}
     >
+      {/* Background photo */}
+      <div className="absolute inset-0">
+        <Image
+          src="/quotes-bg.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+        />
+      </div>
+
+      {/* Light green overlay so cards remain readable */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "rgba(240,253,244,0.87)" }}
+      />
+
       <FloatingLeaves
         count={16}
         direction="down"

@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
+import Image from "next/image"
 import { useCounter } from "@/hooks/use-counter"
 import { TreeDeciduous, Fish, Bird, Thermometer } from "lucide-react"
 import { FloatingLeaves } from "@/components/floating-leaves"
@@ -147,8 +148,23 @@ export function Statistics() {
       ref={sectionRef}
       id="stats"
       className="relative py-24 md:py-36 overflow-hidden"
-      style={{ background: "#ffffff" }}
     >
+      {/* Background photo */}
+      <div className="absolute inset-0">
+        <Image
+          src="/stats-bg.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+        />
+      </div>
+
+      {/* Light overlay so cards remain clean */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "rgba(255,255,255,0.88)" }}
+      />
+
       <FloatingLeaves
         count={14}
         direction="down"

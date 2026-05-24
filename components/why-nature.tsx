@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Wind, Droplets, Leaf, Thermometer, HeartHandshake } from "lucide-react"
 import { FloatingLeaves } from "@/components/floating-leaves"
 
@@ -51,8 +52,23 @@ export function WhyNature() {
     <section
       id="why-nature"
       className="relative py-24 md:py-36 overflow-hidden"
-      style={{ background: "#ffffff" }}
     >
+      {/* Background photo */}
+      <div className="absolute inset-0">
+        <Image
+          src="/why-bg.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+        />
+      </div>
+
+      {/* Light overlay so cards remain clean */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "rgba(255,255,255,0.88)" }}
+      />
+
       <FloatingLeaves
         count={18}
         direction="down"

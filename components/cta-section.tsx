@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Leaf, ArrowRight } from "lucide-react"
 import { FloatingLeaves } from "@/components/floating-leaves"
 
@@ -8,11 +9,26 @@ export function CTASection() {
     <section
       id="cta"
       className="relative py-32 md:py-48 overflow-hidden"
-      style={{
-        background:
-          "radial-gradient(ellipse at 20% 50%, rgba(34,197,94,0.3) 0%, transparent 55%), radial-gradient(ellipse at 80% 40%, rgba(5,18,9,0.5) 0%, transparent 50%), linear-gradient(135deg, #14532D 0%, #166534 40%, #15803d 100%)",
-      }}
     >
+      {/* Background photo */}
+      <div className="absolute inset-0">
+        <Image
+          src="/cta-bg.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+        />
+      </div>
+
+      {/* Dark green overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(10,40,20,0.82) 0%, rgba(15,60,30,0.75) 50%, rgba(10,40,20,0.85) 100%)",
+        }}
+      />
+
       {/* Grid texture */}
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"

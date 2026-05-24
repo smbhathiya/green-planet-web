@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { FloatingLeaves } from "@/components/floating-leaves"
 
 const wildlife = [
@@ -114,16 +115,15 @@ export function WildlifeShowcase() {
               style={{ minHeight: 300 }}
             >
               {/* Photo background */}
-              <div
-                className="absolute inset-0 transition-transform duration-700 group-hover:scale-108"
-                style={{
-                  backgroundImage: `url('${animal.image}')`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  transform: "scale(1)",
-                  transition: "transform 0.7s ease",
-                }}
-              />
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                <Image
+                  src={animal.image}
+                  alt={animal.name}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
 
               {/* Dark gradient overlay */}
               <div
