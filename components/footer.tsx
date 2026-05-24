@@ -1,6 +1,7 @@
 "use client"
 
 import { Leaf, ArrowRight } from "lucide-react"
+import { FloatingLeaves } from "@/components/floating-leaves"
 
 const quickLinks = [
   { label: "Why Nature Matters", href: "#why-nature" },
@@ -13,12 +14,19 @@ const quickLinks = [
 export function Footer() {
   return (
     <footer
+      className="relative overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #14532D 0%, #0a2518 100%)",
         borderTop: "1px solid rgba(255,255,255,0.08)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+      <FloatingLeaves
+        count={12}
+        direction="up"
+        colors={["#bbf7d0", "#d9f99d", "#86efac", "#ffffff"]}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         {/* Main grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           {/* Brand */}

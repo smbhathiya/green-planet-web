@@ -34,9 +34,9 @@ export function Hero() {
 
       {/* Floating leaves */}
       <FloatingLeaves
-        count={14}
+        count={22}
         direction="up"
-        colors={["#bbf7d0", "#d9f99d", "#86efac", "#ffffff"]}
+        colors={["#bbf7d0", "#d9f99d", "#86efac", "#ffffff", "#dcfce7"]}
       />
 
       {/* Content */}

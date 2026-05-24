@@ -1,5 +1,7 @@
 "use client"
 
+import { FloatingLeaves } from "@/components/floating-leaves"
+
 const habits = [
   { emoji: "🧴", title: "Reusable Bottle", tip: "Carry a reusable water bottle and eliminate single-use plastic from your daily routine.", color: "#16a34a" },
   { emoji: "💡", title: "Turn Off Lights", tip: "Switch off lights and unplug devices when not in use to reduce energy consumption.", color: "#d97706" },
@@ -15,10 +17,16 @@ export function DailyHabits() {
   return (
     <section
       id="habits"
-      className="py-24 md:py-36"
+      className="relative py-24 md:py-36 overflow-hidden"
       style={{ background: "#ffffff" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FloatingLeaves
+        count={16}
+        direction="up"
+        colors={["#22C55E", "#86efac", "#d9f99d", "#15803d", "#bbf7d0"]}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <span

@@ -54,9 +54,9 @@ export function WhyNature() {
       style={{ background: "#ffffff" }}
     >
       <FloatingLeaves
-        count={10}
+        count={18}
         direction="down"
-        colors={["#22C55E", "#86efac", "#16a34a", "#d9f99d"]}
+        colors={["#22C55E", "#86efac", "#16a34a", "#d9f99d", "#bbf7d0"]}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

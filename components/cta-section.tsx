@@ -37,7 +37,7 @@ export function CTASection() {
       />
 
       <FloatingLeaves
-        count={14}
+        count={22}
         direction="down"
         colors={["#bbf7d0", "#d9f99d", "#86efac", "#ffffff"]}
       />

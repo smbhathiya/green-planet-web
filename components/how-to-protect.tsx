@@ -74,7 +74,7 @@ export function HowToProtect() {
       style={{ background: "#f0fdf4" }}
     >
       <FloatingLeaves
-        count={10}
+        count={18}
         direction="up"
         colors={["#22C55E", "#15803d", "#86efac", "#d9f99d"]}
       />

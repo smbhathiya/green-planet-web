@@ -38,7 +38,7 @@ export function Quotes() {
       style={{ background: "#f0fdf4" }}
     >
       <FloatingLeaves
-        count={8}
+        count={16}
         direction="down"
         colors={["#22C55E", "#86efac", "#15803d"]}
       />
