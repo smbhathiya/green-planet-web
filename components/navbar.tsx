@@ -40,8 +40,9 @@ export function Navbar() {
           <a href="#home" className="flex items-center gap-2 group">
             <div className="relative">
               <Leaf
-                className="w-7 h-7 text-green-600 transition-transform duration-300 group-hover:rotate-12"
+                className="w-7 h-7 transition-all duration-500 group-hover:rotate-12"
                 fill="currentColor"
+                style={{ color: scrolled ? "#16a34a" : "#d9f99d" }}
               />
               <div className="absolute inset-0 animate-ring-pulse rounded-full bg-green-500/20" />
             </div>
@@ -49,10 +50,8 @@ export function Navbar() {
               className="text-xl font-black tracking-tight"
               style={{
                 fontFamily: "var(--font-heading)",
-                background: "linear-gradient(135deg, #14532D 0%, #22C55E 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                color: scrolled ? "#14532D" : "#ffffff",
+                transition: "color 0.5s ease",
               }}
             >
               Green Planet
@@ -65,10 +64,20 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-green-900/70 hover:text-green-600 transition-colors duration-200 relative group"
+                className="text-sm font-medium transition-colors duration-500 relative group"
+                style={{ color: scrolled ? "rgba(20,83,45,0.75)" : "rgba(255,255,255,0.85)" }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = scrolled ? "#16a34a" : "#ffffff"
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = scrolled ? "rgba(20,83,45,0.75)" : "rgba(255,255,255,0.85)"
+                }}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full" />
+                <span
+                  className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
+                  style={{ background: scrolled ? "#22C55E" : "rgba(255,255,255,0.7)" }}
+                />
               </a>
             ))}
           </nav>
@@ -76,7 +85,8 @@ export function Navbar() {
           {/* Mobile Toggle */}
           <div className="flex items-center gap-3">
             <button
-              className="md:hidden p-2 rounded-lg text-green-800 hover:text-green-600 hover:bg-green-50 transition-colors duration-200"
+              className="md:hidden p-2 rounded-lg transition-colors duration-200"
+              style={{ color: scrolled ? "#14532D" : "rgba(255,255,255,0.85)" }}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
