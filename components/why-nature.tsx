@@ -1,3 +1,5 @@
+"use client"
+
 import { Wind, Droplets, Leaf, Thermometer, HeartHandshake } from "lucide-react"
 
 const reasons = [

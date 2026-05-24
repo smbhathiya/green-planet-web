@@ -1,3 +1,5 @@
+"use client"
+
 import { TreeDeciduous, Trash2, Flame, Bird, Wind, Droplet } from "lucide-react"
 
 const problems = [

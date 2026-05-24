@@ -1,3 +1,5 @@
+"use client"
+
 import { Sprout, PackageOpen, Droplets, Recycle, Sun, Shield } from "lucide-react"
 
 const steps = [

@@ -1,3 +1,5 @@
+"use client"
+
 const habits = [
   { emoji: "🧴", title: "Reusable Bottle", tip: "Carry a reusable water bottle and eliminate single-use plastic from your daily routine." },
   { emoji: "💡", title: "Turn Off Lights", tip: "Switch off lights and unplug devices when not in use to reduce energy consumption." },
