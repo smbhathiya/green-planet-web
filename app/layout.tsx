@@ -17,7 +17,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Green Planet — Protect Nature Before It's Too Late",
+  title: "Green Planet - Protect Nature Before It's Too Late",
   description:
     "Green Planet is an environmental awareness platform dedicated to protecting nature, wildlife, forests, oceans, and inspiring eco-friendly lifestyles for a sustainable future.",
   keywords: [
